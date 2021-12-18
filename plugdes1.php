@@ -91,7 +91,7 @@ function mfp_Add_My_Admin_Link()
 
     function output_menu() {
       ?>
-      <h1>Este es el backend</h1>
+      <h1>Este es el backend editado en github</h1>
       <p>Prueba</p>
       <?php
     }
