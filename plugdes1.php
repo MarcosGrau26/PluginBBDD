@@ -106,7 +106,7 @@ function mfp_Add_My_Admin_Link()
       <h1>Base de datos</h1>
       <p>Datos de una base de datos externa</p>
       <?php
-		  $mydb = new wpdb('root', 'root', 'prueba', 'localhost');
+		  $mydb = new wpdb('root', '', 'prueba', 'localhost');
       $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
       $result = "";
       echo('<table border="1">
