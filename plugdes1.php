@@ -157,4 +157,3 @@ function mfp_Add_My_Admin_Link()
       <?php
     }
     }
-}
