@@ -156,7 +156,7 @@ function mfp_Add_My_Admin_Link()
       </form>
       <?php
     }
-    }
+  }
 
 
 /*Chris11*/
