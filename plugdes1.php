@@ -20,7 +20,7 @@ add_shortcode('bbddfront','dcms_list_data_front');
 function dcms_list_data_front( $content ) {
 	$database_name = 'prueba'; // nombre de la base de datos
 	$database_user = 'root';
-	$database_pass = 'root';
+	$database_pass = '';
 	$database_server = 'localhost';
 
 	$table_name = 'Cliente'; // nombre de la tabla
@@ -91,8 +91,11 @@ function mfp_Add_My_Admin_Link()
 
     function output_menu() {
       ?>
+      <script src="..\wp-content\plugins\plugdes1\funciones.js"></script>
       <h1>Este es el backend editado en github</h1>
       <p>Prueba</p>
+      <button onclick="ResgistrarUsuario()">Registrar</button>
+
       <?php
     }
 
@@ -159,4 +162,4 @@ function mfp_Add_My_Admin_Link()
   }
 
 
-/*Chris11111sadsadsadsaasdss*/
+/*Chris11111sadsadsadsaasdss*dfs f dsf dsaddsfd/
