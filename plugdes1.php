@@ -91,7 +91,7 @@ function mfp_Add_My_Admin_Link()
 
     function output_menu() {
       ?>
-      <script src="..\wp-content\plugins\plugdes1\funciones.js"></script>
+      <script src="..\wp-content\plugins\plugdes1\PluginBBDD\funciones.js"></script>
       <h1>Este es el backend editado en github</h1>
       <p>Prueba</p>
       <button onclick="ResgistrarUsuario()">Registrar</button>
