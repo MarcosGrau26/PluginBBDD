@@ -27,7 +27,7 @@
 	$id = $_POST['id_cliente'];
 	
 
-	
+	echo "HOLA";
 	
 	$sql = "DELETE cliente where  id_cliente='$id'";
 	$resultado = mysqli_query( $conn, $sql);	
