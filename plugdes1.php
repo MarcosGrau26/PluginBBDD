@@ -144,7 +144,7 @@ function mfp_Add_My_Admin_Link()
       echo('</table>');
       ?>
       <h1>Añadir nueva fila</h1>
-      <form action="./includes/modificar.php" method="post">
+      <form role="form" id="form_registrar" method="post">
       <table border="1">
         <tr>
           <th>Nombre</th>
@@ -162,10 +162,19 @@ function mfp_Add_My_Admin_Link()
           <td><input type="number" name="tlf"></td>
           <td><input type="text" name="email"></td>
           <td><input type="date" name="fechanacimiento"></td>
-          <td><input type="submit" value="AÑADIR"></td>
+          <button type="submit" name="btn_reguistrar" id="btn_reguistrar" class="btn btn-primary submitBtn">Registrar</button>
         </tr>
       </table>
       </form>
+      <script type="text/javascript">
+	  $(document).ready(function(){
+		  $("#btn_reguistrar").on('click', function(e){
+			  e.preventDefault();
+			  ResgistrarUsuario();
+		  });
+	  });
+
+  </script>
       <?php
     }
   }
