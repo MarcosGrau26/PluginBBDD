@@ -1,5 +1,5 @@
 <?php
-/*	
+	
     $database_name = 'prueba'; // nombre de la base de datos
 	$database_user = 'root';
 	$database_pass = '';
@@ -24,6 +24,6 @@
 	
 	$sql = "INSERT INTO cliente (nombre, apellido, dni,tlf,email,fechanacimiento,fecharegistro) 
     VALUES ('$nombre', '$apellido', '$dni','$tlf','$email','$fechanacimiento','$fecharegistro')";
-	$resultado = mysqli_query( $mydb, $sql);*/	
+	$resultado = mysqli_query( $mydb, $sql);	
 	
 ?>
