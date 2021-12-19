@@ -18,12 +18,12 @@
     $tlf =$_POST['tlf'];
     $email =$_POST['email'];
     $fechanacimiento =$_POST['fechanacimiento'];
-    $fecharegistro =$_POST['fecharegistro'];
+    //$fecharegistro =$_POST['fecharegistro'];
 
 	
 	
-	$sql = "INSERT INTO cliente (nombre, apellido, dni,tlf,email,fechanacimiento,fecharegistro) 
-    VALUES ('$nombre', '$apellido', '$dni','$tlf','$email','$fechanacimiento','$fecharegistro')";
+	$sql = "INSERT INTO cliente (nombre, apellido, dni,tlf,email,fechanacimiento) 
+    VALUES ('$nombre', '$apellido', '$dni','$tlf','$email','$fechanacimiento')";
 	$resultado = mysqli_query( $mydb, $sql);	
 	
 ?>
