@@ -141,7 +141,7 @@ function mfp_Add_My_Admin_Link()
           <td>'.$item->email.'</td>
           <td>'.$item->fechanacimiento.'</td>
           <td>'.$item->fecharegistro.'</td>
-          <td>Editar</td>
+          <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn">Editar</button></td>
         </tr>');
       }
       echo('</table>
