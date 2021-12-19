@@ -16,7 +16,3 @@ alert("registrado");
     
  });
  }
-
- function ActualizarUsuario(){
-     alert("hola");
- }
