@@ -118,6 +118,7 @@ function mfp_Add_My_Admin_Link()
 		  $mydb = new wpdb('root', '', 'prueba1', 'localhost');
       $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
       $result = "";
+      echo('<form role="form" id="form_actualizar" method="post">');
       echo('<table border="1">
         <tr>
           <th>ID</th>
@@ -128,6 +129,7 @@ function mfp_Add_My_Admin_Link()
           <th>EMAIL</th>
           <th>FECHA NACIMIENTO</th>
           <th>FECHA REGISTRO</th>
+          <th></th>
         </tr>');
       foreach ($items as $item) {
         echo ('<tr>
@@ -139,9 +141,11 @@ function mfp_Add_My_Admin_Link()
           <td>'.$item->email.'</td>
           <td>'.$item->fechanacimiento.'</td>
           <td>'.$item->fecharegistro.'</td>
+          <td>Editar</td>
         </tr>');
       }
-      echo('</table>');
+      echo('</table>
+            </form>');
       ?>
       <h1>Añadir nueva fila</h1>
       <form role="form" id="form_registrar" method="post">
