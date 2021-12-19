@@ -27,7 +27,7 @@
     extract($_GET);
 	
 
-	echo "HOLA";
+	echo $id_cliente;
 	
 	$sql = "DELETE cliente where id_cliente='$id_cliente'";
 	$resultado = mysqli_query( $conn, $sql);	
