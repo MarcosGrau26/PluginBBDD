@@ -103,7 +103,7 @@ function mfp_Add_My_Admin_Link()
      
       <h1>Este es el backend editado en github</h1>
       <p>Prueba</p>
-      <button onclick="ResgistrarUsuario()">Registrar</button>
+      
 
       <?php
     }
@@ -142,8 +142,11 @@ function mfp_Add_My_Admin_Link()
           <td>'.$item->fechanacimiento.'</td>
           <td>'.$item->fecharegistro.'</td>
           <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn">Editar</button></td>
-          <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-danger submitBtn">Borrar</button></td>
-        </tr>');
+          <td></td>'
+          ?>
+          <td> <a href="eliminar.php?id=<?php echo .$item->id_cliente.</?>">Borrar</a></td>
+          <?php
+        echo('</tr>');
       }
       echo('</table>
             </form>');
@@ -167,13 +170,13 @@ function mfp_Add_My_Admin_Link()
           <td><input type="number" name="tlf"></td>
           <td><input type="text" name="email"></td>
           <td><input type="date" name="fechanacimiento"></td>
-          <button type="submit" name="btn_reguistrar" id="btn_reguistrar" class="btn btn-primary submitBtn">Registrar</button>
+          <button type="submit" name="btn_reguistrar" id="btn_registrar" class="btn btn-primary submitBtn">Registrar</button>
         </tr>
       </table>
       </form>
       <script type="text/javascript">
 	  $(document).ready(function(){
-		  $("#btn_reguistrar").on('click', function(e){
+		  $("#btn_registrar").on('click', function(e){
 			  e.preventDefault();
 			  ResgistrarUsuario();
 		  });
