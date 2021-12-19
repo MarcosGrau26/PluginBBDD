@@ -21,8 +21,7 @@
 		if (!$conn) {
 			die("Connection failed: " . mysqli_connect_error());
 		}
-		echo "Connected successfully";
-		 $hola ="Conexion con la base de datos";
+	
 		//mysqli_close($conn);
 		
 	$nombre = $_POST['nombre'];
@@ -35,8 +34,11 @@
 
 	
 	
-	$sql = "INSERT INTO cliente (nombre, apellido, dni,tlf,email,fechanacimiento) 
+/*	$sql = "INSERT INTO cliente (nombre, apellido, dni,tlf,email,fechanacimiento) 
     VALUES ('$nombre', '$apellido', '$dni','$tlf','$email','$fechanacimiento')";
-	$resultado = mysqli_query( $conn, $sql);	
+	$resultado = mysqli_query( $conn, $sql);	*/
 	
 ?>
+<script>
+	alert($nombre)
+</script>
