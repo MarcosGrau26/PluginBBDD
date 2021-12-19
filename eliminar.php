@@ -24,7 +24,7 @@
 	
 		//mysqli_close($conn);
 		
-	$id = $_POST['id'];
+	$id = $_POST['id_cliente'];
 	
 
 	
