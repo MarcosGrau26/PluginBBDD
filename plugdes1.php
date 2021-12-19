@@ -27,7 +27,7 @@ License: GPLv2
 add_shortcode('bbddfront','dcms_list_data_front');
 
 function dcms_list_data_front( $content ) {
-	$database_name = 'prueba'; // nombre de la base de datos
+	$database_name = 'prueba1'; // nombre de la base de datos
 	$database_user = 'root';
 	$database_pass = '';
 	$database_server = 'localhost';
@@ -142,6 +142,7 @@ function mfp_Add_My_Admin_Link()
           <td>'.$item->fechanacimiento.'</td>
           <td>'.$item->fecharegistro.'</td>
           <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn">Editar</button></td>
+          <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-danger submitBtn">Borrar</button></td>
         </tr>');
       }
       echo('</table>
