@@ -6,7 +6,7 @@
 		// Create connection
 		$conn = mysqli_connect($servername, $username, $password, $database);
 
-        borrar($_GET['id_cliente'])
+        borrar($_GET['id_cliente']);
+        echo($_GET['id_cliente']);
 
-        
 ?>
