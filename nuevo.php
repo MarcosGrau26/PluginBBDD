@@ -34,8 +34,8 @@
 
 	
 	
-/*	$sql = "INSERT INTO cliente (nombre, apellido, dni,tlf,email,fechanacimiento) 
+	$sql = "INSERT INTO cliente (nombre, apellido, dni,tlf,email,fechanacimiento) 
     VALUES ('$nombre', '$apellido', '$dni','$tlf','$email','$fechanacimiento')";
-	$resultado = mysqli_query( $conn, $sql);	*/
+	$resultado = mysqli_query( $conn, $sql);	
 	
 ?>
