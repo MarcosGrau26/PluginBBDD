@@ -1,3 +1,12 @@
+<!-- Latest minified bootstrap css -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<!-- Latest minified bootstrap js -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="..\wp-content\plugins\PluginBBDD\funciones.js"></script>
 <?php
 /*
 Plugin Name: Plugdes1
@@ -91,7 +100,7 @@ function mfp_Add_My_Admin_Link()
 
     function output_menu() {
       ?>
-      <script src="..\wp-content\plugins\plugdes1\PluginBBDD\funciones.js"></script>
+     
       <h1>Este es el backend editado en github</h1>
       <p>Prueba</p>
       <button onclick="ResgistrarUsuario()">Registrar</button>
