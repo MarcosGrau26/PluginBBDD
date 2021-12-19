@@ -6,7 +6,7 @@ alert("hola");
 
  $.ajax({
     method:'POST',
-    url:'../wp-content/plugins/plugdes1/PluginBBDD/nuevo.php',
+    url:'../wp-content/plugins/PluginBBDD/nuevo.php',
     data:datos,
     success: function (e) {
     
