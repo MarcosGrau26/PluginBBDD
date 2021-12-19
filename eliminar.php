@@ -24,12 +24,12 @@
 	
 		//mysqli_close($conn);
 		
-	$id = $_POST['id_cliente'];
+    extract($_GET);
 	
 
 	echo "HOLA";
 	
-	$sql = "DELETE cliente where  id_cliente='$id'";
+	$sql = "DELETE cliente where id_cliente='$id_cliente'";
 	$resultado = mysqli_query( $conn, $sql);	
 	
 ?>
