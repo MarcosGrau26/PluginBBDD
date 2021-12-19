@@ -12,7 +12,7 @@
 
 		$mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);*/
 		$servername = "localhost";
-		$database = "prueba";
+		$database = "prueba1";
 		$username = "root";
 		$password = "";
 		// Create connection
@@ -39,6 +39,3 @@
 	$resultado = mysqli_query( $conn, $sql);	*/
 	
 ?>
-<script>
-	alert($nombre)
-</script>
