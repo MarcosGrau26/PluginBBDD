@@ -1,6 +1,6 @@
 <?php
 	
-    $database_name = 'prueba'; // nombre de la base de datos
+   /* $database_name = 'prueba'; // nombre de la base de datos
 	$database_user = 'root';
 	$database_pass = '';
 	$database_server = 'localhost';
@@ -10,8 +10,21 @@
 
 	// if (is_page($slug_page)){
 
-		$mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);
-	
+		$mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);*/
+		$servername = "localhost";
+		$database = "cliente";
+		$username = "root";
+		$password = "";
+		// Create connection
+		$conn = mysqli_connect($servername, $username, $password, $database);
+		// Check connection
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		echo "Connected successfully";
+		 $hola ="Conexion con la base de datos";
+		//mysqli_close($conn);
+		
 	$nombre = $_POST['nombre'];
 	$apellido =$_POST['apellido'];
 	$dni =$_POST['dni'];
@@ -24,6 +37,6 @@
 	
 	$sql = "INSERT INTO cliente (nombre, apellido, dni,tlf,email,fechanacimiento) 
     VALUES ('$nombre', '$apellido', '$dni','$tlf','$email','$fechanacimiento')";
-	$resultado = mysqli_query( $mydb, $sql);	
+	$resultado = mysqli_query( $conn, $sql);	
 	
 ?>
