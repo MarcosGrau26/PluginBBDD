@@ -12,7 +12,7 @@
 
 		$mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);*/
 		$servername = "localhost";
-		$database = "cliente";
+		$database = "prueba";
 		$username = "root";
 		$password = "";
 		// Create connection
