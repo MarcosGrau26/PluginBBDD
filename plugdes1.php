@@ -142,7 +142,7 @@ function mfp_Add_My_Admin_Link()
           <td>'.$item->fechanacimiento.'</td>
           <td>'.$item->fecharegistro.'</td>
           <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn">Editar</button></td>
-          <td><a href="borrar.php?id_cliente='.$item->id_cliente.'">Borrar</a></td>');
+          <td><a href="eliminar.php?id_cliente='.$item->id_cliente.'">Borrar</a></td>');
       }
       echo('</table>
             </form>');
