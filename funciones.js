@@ -1,6 +1,6 @@
 function ResgistrarUsuario(){
 
-//alert("hola");
+alert("hola");
  var datos=$("#form_registrar").serialize();
 //  alert(datos);
 
