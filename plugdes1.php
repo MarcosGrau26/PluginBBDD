@@ -154,7 +154,7 @@ function mfp_Add_My_Admin_Link()
 		  $("#btn_actualizar").on('click', function(e){
 			  e.preventDefault();
 			  ActualizarUsuario();
-              location.reload(true);
+              //location.reload(true);
 		  });
 	  });
 
