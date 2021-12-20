@@ -160,9 +160,7 @@ function mfp_Add_My_Admin_Link()
 
   </script>
      	   <!-- Agregar Usuarios-->
-<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
-    Nuevo registro
-</button>
+<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">Nuevo registro</button>
 
 <!-- Modal -->
 <div class="modal fade" id="modalForm" role="dialog">
@@ -176,7 +174,7 @@ function mfp_Add_My_Admin_Link()
                 </button>
                 <h4 class="modal-title" id="myModalLabel">Datos</h4>
             </div>
-            
+
             <!-- Modal Body -->
             <div class="modal-body">
                 <p class="statusMsg"></p>
@@ -217,7 +215,7 @@ function mfp_Add_My_Admin_Link()
     </div>
 </div>
 
-<<!--Actualizar Datos-->
+<!--Actualizar Datos-->
 
 <div class="modal fade" id="modalactualizar" role="dialog">
     <div class="modal-dialog">
