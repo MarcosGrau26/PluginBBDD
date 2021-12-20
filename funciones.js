@@ -44,7 +44,7 @@ location.reload(true);
 
    $.ajax({
       method:'POST',
-      url:'../wp-content/plugins/Plugin_basededatos/includes/actualizar.php',
+      url:'../wp-content/plugins/PluginBBDD/actualizar.php',
       data:datos,
      success: function (e) {
        // alert("Actualizado");
