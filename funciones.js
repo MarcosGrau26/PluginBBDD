@@ -17,3 +17,7 @@ alert("Registrado");
  });
  location.reload(forceGet);
  }
+
+ function EliminarUsuario(){
+    var datos=#("#form_actualizar").serialize();
+ }
