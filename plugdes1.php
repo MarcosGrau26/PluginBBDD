@@ -39,19 +39,20 @@ function dcms_list_data_front( $content ) {
     include 'conexion.php';
 
 
-		$items = $mydb->get_results("SELECT * FROM `$table_name`");
+    $sql = "SELECT * FROM cliente";
+    $items = mysqli_query($conn, $sql);
     $result = "";
 		// nombre de los campos de la tabla
 		foreach ($items as $item) {
 			$result .= '<tr>
-				<td>'.$item->id_cliente.'</td>
-				<td>'.$item->nombre.'</td>
-				<td>'.$item->apellido.'</td>
-        <td>'.$item->dni.'</td>
-				<td>'.$item->tlf.'</td>
-				<td>'.$item->email.'</td>
-        <td>'.$item->fechanacimiento.'</td>
-        <td>'.$item->fecharegistro.'</td>
+				<td>'.$item['id_cliente'].'</td>
+				<td>'.$item['nombre'].'</td>
+				<td>'.$item['apellido'].'</td>
+        <td>'.$item['dni'].'</td>
+				<td>'.$item['tlf'].'</td>
+				<td>'.$item['email'].'</td>
+        <td>'.$item['fechanacimiento'].'</td>
+        <td>'.$item['fecharegistro'].'</td>
 			</tr>';
 		}
 
@@ -117,9 +118,9 @@ function mfp_Add_My_Admin_Link()
       <p>Datos de una base de datos externa</p>
       <?php
 		  include 'conexion.php';
-      $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
-      $result = "";
-      echo('<form role="form" id="form_actualizar" method="post">');
+      // $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
+      $sql = "SELECT * FROM cliente";
+      $items = mysqli_query($conn, $sql);
       echo('<table border="1">
         <tr>
           <th>ID</th>
@@ -134,19 +135,18 @@ function mfp_Add_My_Admin_Link()
         </tr>');
       foreach ($items as $item) {
         echo ('<tr>
-          <td>'.$item->id_cliente.'</td>
-          <td>'.$item->nombre.'</td>
-          <td>'.$item->apellido.'</td>
-          <td>'.$item->dni.'</td>
-          <td>'.$item->tlf.'</td>
-          <td>'.$item->email.'</td>
-          <td>'.$item->fechanacimiento.'</td>
-          <td>'.$item->fecharegistro.'</td>
+          <td>'.$item['id_cliente'].'</td>
+          <td>'.$item['nombre'].'</td>
+          <td>'.$item['apellido'].'</td>
+          <td>'.$item['dni'].'</td>
+          <td>'.$item['tlf'].'</td>
+          <td>'.$item['email'].'</td>
+          <td>'.$item['fechanacimiento'].'</td>
+          <td>'.$item['fecharegistro'].'</td>
           <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn">Editar</button></td>
-          <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='.$item->id_cliente.'">Borrar</a></td>');
+          <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='.$item['id_cliente'].'">Borrar</a></td>');
       }
-      echo('</table>
-            </form>');
+      echo('</table>');
       ?>
       <h1>Añadir nueva fila</h1>
       <form role="form" id="form_registrar" method="post">
