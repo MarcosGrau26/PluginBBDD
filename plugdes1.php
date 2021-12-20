@@ -149,6 +149,10 @@ function mfp_Add_My_Admin_Link()
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
