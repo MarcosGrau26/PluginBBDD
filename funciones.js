@@ -40,20 +40,18 @@ location.reload(true);
  function ActualizarUsuario(){
 
    var datos=$("#form_actualizar").serialize();
-  // alert(datos);
-  
-   $.ajax({
+   location.reload(true);
+
+   /*$.ajax({
       method:'POST',
       url:'../wp-content/plugins/Plugin_basededatos/includes/actualizar.php',
       data:datos,
       success: function (e) {
-       
+        alert("Actualizado");
         location.reload(true);
-  //alert("registrado");
-          
       }
       
    });
-   return false;
+   return false;*/
    }
   
