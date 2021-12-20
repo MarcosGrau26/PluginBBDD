@@ -19,7 +19,7 @@ alert("Registrado");
  }
 
  function EliminarUsuario(){
-    var datos=$("#form_actualizar").serialize();
+   // var datos=$("#form_actualizar").serialize();
  }
  function LlenarDatos(datos){
     d=datos.split("||");
