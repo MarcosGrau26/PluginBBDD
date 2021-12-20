@@ -145,6 +145,14 @@ function mfp_Add_My_Admin_Link()
         </tr>
       </table>
       </form>
+<div class="modal fade" id="modalactualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
       <form role="form" id="form_actualizar" method="post">
                 <div class="form-group">
                         <label for="aid">ID</label>
@@ -179,6 +187,14 @@ function mfp_Add_My_Admin_Link()
                         <input type="text" class="form-control" name="afecharegistro" id="afecharegistro" value=""/>
                     </div>
                 </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
       <?php
    /*   echo('<form role="form" id="form_actualizar" method="post">
       <table class="table">
