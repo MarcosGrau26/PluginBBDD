@@ -132,8 +132,9 @@ function mfp_Add_My_Admin_Link()
 	if(!empty($_POST))
 	{
 		$valor = $_POST['campo'];
+        $tipobusqueda=$_POST['taskOption'];
 		if(!empty($valor)){
-			$where = "WHERE nombre LIKE '%$valor'";
+			$where = "WHERE $tipobusqueda LIKE '%$valor'";
 		}
 	} 
       $sql = "SELECT * FROM cliente $where";
@@ -163,6 +164,11 @@ function mfp_Add_My_Admin_Link()
 <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">Nuevo registro</button>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+<select name="taskOption"id="taskOption">
+  <option value="id_cliente">ID</option>
+  <option value="nombre">Nombre</option>
+  <option value="dni">DNI</option>
+</select>
 					<input type="text" id="campo" name="campo" placeholder="Nombre"/>
 					<input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
 				</form>
@@ -284,7 +290,7 @@ function mfp_Add_My_Admin_Link()
    
       ?>
   <div class="row table-responsive" >
-				<table class="table table-striped" id="tabla_registro">
+				<table class="table table-striped" >
 					<thead>
 						<tr>
                         <th>ID</th>
