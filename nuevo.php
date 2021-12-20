@@ -11,13 +11,14 @@
 	// if (is_page($slug_page)){
 
 		$mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);*/
-		$servername = "localhost";
-		$database = "prueba1";
-		$username = "root";
-		$password = "";
-		// Create connection
-		$conn = mysqli_connect($servername, $username, $password, $database);
+		// $servername = "localhost";
+		// $database = "prueba1";
+		// $username = "root";
+		// $password = "";
+		// // Create connection
+		// $conn = mysqli_connect($servername, $username, $password, $database);
 		// Check connection
+		include 'conexion.php';
 		if (!$conn) {
 			die("Connection failed: " . mysqli_connect_error());
 		}
