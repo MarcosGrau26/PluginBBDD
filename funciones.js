@@ -40,7 +40,7 @@ location.reload(true);
  function ActualizarUsuario(){
 
    var datos=$("#form_actualizar").serialize();
-   alert(datos);
+  // alert(datos);
   
    $.ajax({
       method:'POST',
