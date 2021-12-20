@@ -39,7 +39,7 @@ location.reload(true);
  }
  function ActualizarUsuario(){
 
-   var datos=$("#form_actualizar").serialize();
+   //var datos=$("#form_actualizar").serialize();
    location.reload(true);
 
    /*$.ajax({
