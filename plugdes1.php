@@ -121,7 +121,8 @@ function mfp_Add_My_Admin_Link()
       // $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
       $sql = "SELECT * FROM cliente";
       $items = mysqli_query($conn, $sql);
-      echo('<table class="table">
+      echo('<form role="form" id="form_actualizar" method="post">
+      <table class="table">
         <tr>
           <th>ID</th>
           <th>Nombre</th>
@@ -146,7 +147,7 @@ function mfp_Add_My_Admin_Link()
           <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn">Editar</button></td>
           <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='.$item['id_cliente'].'">Borrar</a></td>');
       }
-      echo('</table>');
+      echo('</table></form>');
       ?>
       <h1>Añadir nueva fila</h1>
       <form role="form" id="form_registrar" method="post">
