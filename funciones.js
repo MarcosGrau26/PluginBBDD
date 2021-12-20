@@ -24,7 +24,7 @@ alert("Registrado");
  function LlenarDatos(datos){
     d=datos.split("||");
     for (var i = 0; i < d.length; i++){
-      //console.log(d[i]);
+      console.log(d[i]);
   }
     $("#aid").val(d[0]);
     $("#anombre").val(d[1]);
