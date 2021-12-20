@@ -31,5 +31,5 @@
 	
 	$sql = "DELETE FROM cliente where id_cliente=$id_cliente";
 	$resultado = mysqli_query( $conn, $sql);	
-	echo "<script>location.href='../wp-content/plugins/PluginBBDD/plugdes1.php'</script>";
+	echo "<script>location.href='/wp-admin/admin.php?page=prueba2'</script>";
 ?>
