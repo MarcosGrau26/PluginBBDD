@@ -139,42 +139,102 @@ function mfp_Add_My_Admin_Link()
       $sql = "SELECT * FROM cliente $where";
       $items = mysqli_query($conn, $sql);
       ?>
-      <h1>Añadir nueva fila</h1>
-      <form role="form" id="form_registrar" method="post">
-      <table class="table">
-        <tr>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>DNI</th>
-          <th>TELEFONO</th>
-          <th>EMAIL</th>
-          <th>FECHA NACIMIENTO</th>
-          <th></th>
-        </tr>
-        <tr>
-          <td><input type="text" name="nombre"></td>
-          <td><input type="text" name="apellido"></td>
-          <td><input type="text" name="dni"></td>
-          <td><input type="number" name="tlf"></td>
-          <td><input type="text" name="email"></td>
-          <td><input type="date" name="fechanacimiento"></td>
-          <td><button type="submit" name="btn_reguistrar" id="btn_registrar" class="btn btn-primary submitBtn">Registrar</button></td>
-        </tr>
-      </table>
-      </form>
-<div class="modal fade" id="modalactualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">
+       <script type="text/javascript">
+	  $(document).ready(function(){
+		  $("#btn_registrar").on('click', function(e){
+			  e.preventDefault();
+			  ResgistrarUsuario();
+		  });
+	  });
+
+  </script>
+  
+  <script type="text/javascript">
+	  $(document).ready(function(){
+		  $("#btn_actualizar").on('click', function(e){
+			  e.preventDefault();
+			  ActualizarUsuario();
+              location.reload(true);
+		  });
+	  });
+
+  </script>
+     	   <!-- Agregar Usuarios-->
+<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+    Nuevo registro
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modalForm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">×</span>
                     <span class="sr-only">Close</span>
                 </button>
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form role="form" id="form_actualizar" method="post">
+                <h4 class="modal-title" id="myModalLabel">Datos</h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form role="form" id="form_registrar" method="post">
+                    <div class="form-group">
+                        <label >Nombre</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Apellido</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido"/>
+                    </div>
+                    <div class="form-group">
+                        <label >DNI</label>
+                        <input type="text" class="form-control" name="dni" id="dni" placeholder="DNI"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Telefono</label>
+                        <input type="number" class="form-control" name="tlf" id="tlf" placeholder="Telefono"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Correo Electronico"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Fecha Nacimiento</label>
+                        <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" placeholder="Fecha Nacimiento"/>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" name="btn_registrar" id="btn_registrar" class="btn btn-primary submitBtn">Registrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<<!--Actualizar Datos-->
+
+<div class="modal fade" id="modalactualizar" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Datos</h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form role="form" id="form_actualizar" method="post">
                 <div class="form-group">
                         <label for="aid">ID</label>
                         <input type="text" class="form-control" name="aid" id="aid" value="" />
@@ -208,13 +268,15 @@ function mfp_Add_My_Admin_Link()
                         <input type="text" class="form-control" name="afecharegistro" id="afecharegistro" value=""/>
                     </div>
                 </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-primary submitBtn">Actualizar</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
       <?php
    /*   echo('<form role="form" id="form_actualizar" method="post">
@@ -296,15 +358,7 @@ function mfp_Add_My_Admin_Link()
 					</tbody>
 				</table>
 			</div>
-      <script type="text/javascript">
-	  $(document).ready(function(){
-		  $("#btn_registrar").on('click', function(e){
-			  e.preventDefault();
-			  ResgistrarUsuario();
-		  });
-	  });
-
-  </script>
+     
       <?php
     }
   }
