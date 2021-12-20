@@ -210,49 +210,6 @@ function mfp_Add_My_Admin_Link()
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-      <form role="form" id="form_actualizar" method="post">
-                <div class="form-group">
-                        <label for="aid">ID</label>
-                        <input type="text" class="form-control" name="aid" id="aid" value="" />
-                    </div>
-                    <div class="form-group">
-                        <label for="inputName">Nombre</label>
-                        <input type="text" class="form-control" name="anombre" id="anombre" value=""/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputName">Apellido</label>
-                        <input type="text" class="form-control" name="aapellido" id="aapellido" value=""/>
-                    </div>
-                    <div class="form-group">
-                        <label for="adni">DNI</label>
-                        <input type="text" class="form-control" name="adni" id="adni" value=""/>
-                    </div>
-                    <div class="form-group">
-                        <label for="atln">Telefono</label>
-                        <input type="number" class="form-control" name="atln" id="atln" value=""/>
-                    </div>
-                    <div class="form-group">
-                        <label for="aemail">Email</label>
-                        <input type="email" class="form-control" name="aemail" id="aemail" value=""/>
-                    </div>
-                    <div class="form-group">
-                        <label for="afechanacimiento">Fecha Nacimiento</label>
-                        <input type="date" class="form-control" name="afechanacimiento" id="afechanacimiento" value=""/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputName">Fecha Registro</label>
-                        <input type="text" class="form-control" name="afecharegistro" id="afecharegistro" value=""/>
-                    </div>
-                </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!--Actualizar Datos-->
 
