@@ -162,6 +162,10 @@ function mfp_Add_My_Admin_Link()
      	   <!-- Agregar Usuarios-->
 <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">Nuevo registro</button>
 
+<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+					<b>Nombre: </b><input type="text" id="campo" name="campo" />
+					<input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
+				</form>
 <!-- Modal -->
 <div class="modal fade" id="modalForm" role="dialog">
     <div class="modal-dialog">
