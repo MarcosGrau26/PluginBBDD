@@ -180,7 +180,7 @@ function mfp_Add_My_Admin_Link()
                     </div>
                 </form>
       <?php
-      echo('<form role="form" id="form_actualizar" method="post">
+   /*   echo('<form role="form" id="form_actualizar" method="post">
       <table class="table">
         <tr>
           <th>ID</th>
@@ -192,8 +192,8 @@ function mfp_Add_My_Admin_Link()
           <th>FECHA NACIMIENTO</th>
           <th>FECHA REGISTRO</th>
           <th></th>
-        </tr>');
-      foreach ($items as $item) {
+        </tr>');*/
+    /*  foreach ($items as $item) {
         $datos=$item['id_cliente']."||".
                             $item['nombre']."||".
                             $item['apellido']."||".
@@ -211,11 +211,54 @@ function mfp_Add_My_Admin_Link()
           <td>'.$item['email'].'</td>
           <td>'.$item['fechanacimiento'].'</td>
           <td>'.$item['fecharegistro'].'</td>
-          <td><button name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn" onclick="LlenarDatos('$datos')";>Editar</button></td>
+          <td><button name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn" onclick="LlenarDatos($datos)";>Editar</button></td>
           <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='.$item['id_cliente'].'">Borrar</a></td>');
       }
-      echo('</table></form>');
+      echo('</table></form>');*/
       ?>
+  <div class="row table-responsive" >
+				<table class="table table-striped" id="tabla_registro">
+					<thead>
+						<tr>
+                        <th>ID</th>
+			      <th>Nombre</th>
+			      <th>Apellido</th>
+                  <th>DNI</th>
+                  <th>TELEFONO</th>
+                  <th>EMAIL</th>
+                  <th>FECHA NACIMIENTO</th>
+                  <th>FECHA REGISTRO</th>
+							<th>Modificar</th>
+							<th>Eliminar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php while($row = $items->fetch_array(MYSQLI_ASSOC)) { 
+                            $datos=$row['id_cliente']."||".
+                            $row['nombre']."||".
+                            $row['apellido']."||".
+                            $row['dni']."||".
+                            $row['tlf']."||".
+                            $row['email']."||".
+                            $row['fechanacimiento']."||".
+                            $row['fecharegistro'];
+                            ?>
+							<tr>
+                            <td><?php echo $row['id_cliente']; ?></td>
+                    <td><?php echo $row['nombre']; ?></td>
+                    <td><?php echo $row['apellido']; ?></td>
+                    <td><?php echo $row['dni']; ?></td>
+                    <td><?php echo $row['tlf']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['fechanacimiento']; ?></td>
+                    <td><?php echo $row['fecharegistro']; ?></td>
+								<td><button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalactualizar" onclick="LlenarDatos('<?php echo $datos?>')";><span class="glyphicon glyphicon-pencil"></span></button></td>
+                <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='<?php echo $row['id_cliente']?>'">Borrar</a></td>'
+                        </tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			</div>
       <script type="text/javascript">
 	  $(document).ready(function(){
 		  $("#btn_registrar").on('click', function(e){
