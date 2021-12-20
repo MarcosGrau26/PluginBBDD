@@ -2,7 +2,7 @@ function ResgistrarUsuario(){
 
 //alert("hola");
  var datos=$("#form_registrar").serialize();
- alert(datos);
+//  alert(datos);
 
  $.ajax({
     method:'POST',
@@ -10,9 +10,10 @@ function ResgistrarUsuario(){
     data:datos,
     success: function (e) {
     
-alert("registrado");
+alert("Registrado");
         
     }
     
  });
+ location.reload(forceGet);
  }
