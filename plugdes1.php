@@ -27,17 +27,18 @@ License: GPLv2
 add_shortcode('bbddfront','dcms_list_data_front');
 
 function dcms_list_data_front( $content ) {
-	$database_name = 'prueba1'; // nombre de la base de datos
-	$database_user = 'root';
-	$database_pass = '';
-	$database_server = 'localhost';
-
+	// $database_name = 'prueba1'; // nombre de la base de datos
+	// $database_user = 'root';
+	// $database_pass = '';
+	// $database_server = 'localhost';
+  // $mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);
 	$table_name = 'Cliente'; // nombre de la tabla
-	$slug_page = 'clientes'; //slug de la página en donde se mostrará la tabla
+	// $slug_page = 'clientes'; //slug de la página en donde se mostrará la tabla
 
 	// if (is_page($slug_page)){
+    include 'conexion.php';
 
-		$mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);
+
 		$items = $mydb->get_results("SELECT * FROM `$table_name`");
     $result = "";
 		// nombre de los campos de la tabla
@@ -115,7 +116,7 @@ function mfp_Add_My_Admin_Link()
       <h1>Base de datos</h1>
       <p>Datos de una base de datos externa</p>
       <?php
-		  $mydb = new wpdb('root', '', 'prueba1', 'localhost');
+		  include 'conexion.php';
       $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
       $result = "";
       echo('<form role="form" id="form_actualizar" method="post">');
