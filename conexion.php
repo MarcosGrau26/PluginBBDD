@@ -1,7 +1,7 @@
 <?php
-    $database_name = 'prueba1'; // nombre de la base de datos
-	$database_user = 'root';
-	$database_pass = '';
-	$database_server = 'localhost';
-    $mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);
+    $servername = "localhost";
+    $database = "prueba1";
+    $username = "root";
+    $password = "";
+    $conn = mysqli_connect($servername, $username, $password, $database);
 ?>
