@@ -163,7 +163,7 @@ function mfp_Add_My_Admin_Link()
 <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">Nuevo registro</button>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-					<b>Nombre: </b><input type="text" id="campo" name="campo" />
+					<input type="text" id="campo" name="campo" placeholder="Nombre"/>
 					<input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
 				</form>
 <!-- Modal -->
