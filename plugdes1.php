@@ -168,6 +168,9 @@ function mfp_Add_My_Admin_Link()
   <option value="id_cliente">ID</option>
   <option value="nombre">Nombre</option>
   <option value="dni">DNI</option>
+  <option value="tlf">Telefono</option>
+  <option value="email">Email</option>
+  <option value="fechanacimiento">Fecha Nacimiento</option>
 </select>
 					<input type="text" id="campo" name="campo" placeholder="Nombre"/>
 					<input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
