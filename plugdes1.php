@@ -281,41 +281,7 @@ function mfp_Add_My_Admin_Link()
     </div>
 </div>
       <?php
-   /*   echo('<form role="form" id="form_actualizar" method="post">
-      <table class="table">
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>DNI</th>
-          <th>TELEFONO</th>
-          <th>EMAIL</th>
-          <th>FECHA NACIMIENTO</th>
-          <th>FECHA REGISTRO</th>
-          <th></th>
-        </tr>');*/
-    /*  foreach ($items as $item) {
-        $datos=$item['id_cliente']."||".
-                            $item['nombre']."||".
-                            $item['apellido']."||".
-                            $item['dni']."||".
-                            $item['tlf']."||".
-                            $item['email']."||".
-                            $item['fechanacimiento']."||".
-                            $item['fecharegistro'];
-        echo ('<tr>
-          <td>'.$item['id_cliente'].'</td>
-          <td>'.$item['nombre'].'</td>
-          <td>'.$item['apellido'].'</td>
-          <td>'.$item['dni'].'</td>
-          <td>'.$item['tlf'].'</td>
-          <td>'.$item['email'].'</td>
-          <td>'.$item['fechanacimiento'].'</td>
-          <td>'.$item['fecharegistro'].'</td>
-          <td><button name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn" onclick="LlenarDatos($datos)";>Editar</button></td>
-          <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='.$item['id_cliente'].'">Borrar</a></td>');
-      }
-        echo('</table></form>');///*/
+   
       ?>
   <div class="row table-responsive" >
 				<table class="table table-striped" id="tabla_registro">
