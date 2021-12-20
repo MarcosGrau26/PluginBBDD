@@ -39,14 +39,13 @@ location.reload(true);
  }
  function ActualizarUsuario(){
 
-   //var datos=$("#form_actualizar").serialize();
+   var datos=$("#form_actualizar").serialize();
   
 
    $.ajax({
       method:'POST',
       url:'../wp-content/plugins/Plugin_basededatos/includes/actualizar.php',
       data:datos,
-      
      success: function (e) {
         alert("Actualizado");
         location.reload(true);
