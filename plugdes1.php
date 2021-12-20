@@ -33,7 +33,7 @@ function dcms_list_data_front( $content ) {
 	// $database_server = 'localhost';
   // $mydb = new wpdb($database_user, $database_pass, $database_name, $database_server);
 	$table_name = 'Cliente'; // nombre de la tabla
-	// $slug_page = 'clientes'; //slug de la página en donde se mostrará la tabla
+	// $slug_page = 'clientes'; //slug de la página en donde se mostrará la tablaa
 
 	// if (is_page($slug_page)){
     include 'conexion.php';
