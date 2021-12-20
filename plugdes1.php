@@ -211,7 +211,7 @@ function mfp_Add_My_Admin_Link()
           <td>'.$item['email'].'</td>
           <td>'.$item['fechanacimiento'].'</td>
           <td>'.$item['fecharegistro'].'</td>
-          <td><button name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn" onclick="LlenarDatos('echo $datos')";>Editar</button></td>
+          <td><button name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn" onclick="LlenarDatos('$datos')";>Editar</button></td>
           <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='.$item['id_cliente'].'">Borrar</a></td>');
       }
       echo('</table></form>');
