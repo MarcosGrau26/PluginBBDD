@@ -32,5 +32,8 @@
 	
 	$sql = "DELETE FROM cliente where id_cliente=$id_cliente";
 	$resultado = mysqli_query( $conn, $sql);	
-	echo "<script>location.href='/wp-admin/admin.php?page=prueba2'</script>";
+//	header ("location:'.$_server['HTTP_REFERER']");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+	//header("location:..../wp-admin/admin.php?page=prueba2");
+//	echo "<script>location.href='/wp-admin/admin.php?page=prueba2'</script>";
 ?>
