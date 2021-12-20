@@ -11,11 +11,13 @@ function ResgistrarUsuario(){
     success: function (e) {
     
 //alert("Registrado");
+location.reload(true);
         
     }
     
  });
- location.reload(forceGet);
+ 
+ //location.reload(forceGet);
  }
 
  function EliminarUsuario(){
@@ -35,3 +37,23 @@ function ResgistrarUsuario(){
     $("#afechanacimiento").val(d[6]);
     $("#afecharegistro").val(d[7]);
  }
+ function ActualizarUsuario(){
+
+   var datos=$("#form_actualizar").serialize();
+   alert(datos);
+  
+   $.ajax({
+      method:'POST',
+      url:'../wp-content/plugins/Plugin_basededatos/includes/actualizar.php',
+      data:datos,
+      success: function (e) {
+       
+        location.reload(true);
+  //alert("registrado");
+          
+      }
+      
+   });
+   return false;
+   }
+  
