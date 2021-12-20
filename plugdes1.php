@@ -121,7 +121,7 @@ function mfp_Add_My_Admin_Link()
       // $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
       $sql = "SELECT * FROM cliente";
       $items = mysqli_query($conn, $sql);
-      echo('<table border="1">
+      echo('<table class="table">
         <tr>
           <th>ID</th>
           <th>Nombre</th>
@@ -150,7 +150,7 @@ function mfp_Add_My_Admin_Link()
       ?>
       <h1>Añadir nueva fila</h1>
       <form role="form" id="form_registrar" method="post">
-      <table border="1">
+      <table class="table">
         <tr>
           <th>Nombre</th>
           <th>Apellido</th>
@@ -167,7 +167,7 @@ function mfp_Add_My_Admin_Link()
           <td><input type="number" name="tlf"></td>
           <td><input type="text" name="email"></td>
           <td><input type="date" name="fechanacimiento"></td>
-          <button type="submit" name="btn_reguistrar" id="btn_registrar" class="btn btn-primary submitBtn">Registrar</button>
+          <td><button type="submit" name="btn_reguistrar" id="btn_registrar" class="btn btn-primary submitBtn">Registrar</button></td>
         </tr>
       </table>
       </form>
