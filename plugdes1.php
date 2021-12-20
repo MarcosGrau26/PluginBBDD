@@ -345,7 +345,7 @@ function mfp_Add_My_Admin_Link()
                             $row['fecharegistro'];
                             ?>
 							<tr>
-                            <td><?php echo $row['id_cliente']; ?></td>
+                    <td><?php echo $row['id_cliente']; ?></td>
                     <td><?php echo $row['nombre']; ?></td>
                     <td><?php echo $row['apellido']; ?></td>
                     <td><?php echo $row['dni']; ?></td>
@@ -354,7 +354,7 @@ function mfp_Add_My_Admin_Link()
                     <td><?php echo $row['fechanacimiento']; ?></td>
                     <td><?php echo $row['fecharegistro']; ?></td>
 								<td><button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalactualizar" onclick="LlenarDatos('<?php echo $datos?>')";><span class="glyphicon glyphicon-pencil"></span></button></td>
-                <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='<?php echo $row['id_cliente']?>'">Borrar</a></td>'
+                <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='<?php echo $row['id_cliente']?>'"><span class="glyphicon glyphicon-trash"></span></a></td>'
                         </tr>
 						<?php } ?>
 					</tbody>
