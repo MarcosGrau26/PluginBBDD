@@ -37,7 +37,15 @@ function dcms_list_data_front( $content ) {
 
 	// if (is_page($slug_page)){
     include 'conexion.php';
-
+    $where = "";
+	
+    if(!empty($_POST))
+    {
+      $valor = $_POST['campo'];
+      if(!empty($valor)){
+        $where = "WHERE nombre LIKE '%$valor'";
+      }
+    }
 
     $sql = "SELECT * FROM cliente";
     $items = mysqli_query($conn, $sql);
@@ -118,33 +126,79 @@ function mfp_Add_My_Admin_Link()
       <p>Datos de una base de datos externa</p>
       <?php
 		  include 'conexion.php';
-      // $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
-      $sql = "SELECT * FROM cliente";
+      // $items = $mydb->get_results("SELECT * FROM `Cliente`");
+      $where = "";
+	
+	if(!empty($_POST))
+	{
+		$valor = $_POST['campo'];
+		if(!empty($valor)){
+			$where = "WHERE nombre LIKE '%$valor'";
+		}
+	} 
+      $sql = "SELECT * FROM cliente $where";
       $items = mysqli_query($conn, $sql);
       ?>
       <h1>Añadir nueva fila</h1>
-      <form role="form" id="form_registrar" method="post">
-      <table class="table">
-        <tr>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>DNI</th>
-          <th>TELEFONO</th>
-          <th>EMAIL</th>
-          <th>FECHA NACIMIENTO</th>
-          <th></th>
-        </tr>
-        <tr>
-          <td><input type="text" name="nombre"></td>
-          <td><input type="text" name="apellido"></td>
-          <td><input type="text" name="dni"></td>
-          <td><input type="number" name="tlf"></td>
-          <td><input type="text" name="email"></td>
-          <td><input type="date" name="fechanacimiento"></td>
-          <td><button type="submit" name="btn_reguistrar" id="btn_registrar" class="btn btn-primary submitBtn">Registrar</button></td>
-        </tr>
-      </table>
-      </form>
+      <!-- Agregar Usuarios-->
+<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+    Nuevo registro
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modalForm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Datos</h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form role="form" id="form_registrar" method="post">
+                    <div class="form-group">
+                        <label >Nombre</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Apellido</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido"/>
+                    </div>
+                    <div class="form-group">
+                        <label >DNI</label>
+                        <input type="text" class="form-control" name="dni" id="dni" placeholder="DNI"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Telefono</label>
+                        <input type="number" class="form-control" name="tlf" id="tlf" placeholder="Telefono"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Correo Electronico"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Fecha Nacimiento</label>
+                        <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" placeholder="Fecha Nacimiento"/>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" name="btn_reguistrar" id="btn_reguistrar" class="btn btn-primary submitBtn">Registrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+     </div>
+
 <div class="modal fade" id="modalactualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -199,6 +253,69 @@ function mfp_Add_My_Admin_Link()
     </div>
   </div>
 </div>
+
+<!--Actualizar Datos-->
+
+<div class="modal fade" id="modalactualizar" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Datos</h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form role="form" id="form_actualizar" method="post">
+                <div class="form-group">
+                        <label for="aid">ID</label>
+                        <input type="text" class="form-control" name="aid" id="aid" value="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Nombre</label>
+                        <input type="text" class="form-control" name="anombre" id="anombre" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Apellido</label>
+                        <input type="text" class="form-control" name="aapellido" id="aapellido" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="adni">DNI</label>
+                        <input type="text" class="form-control" name="adni" id="adni" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="atln">Telefono</label>
+                        <input type="number" class="form-control" name="atln" id="atln" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="aemail">Email</label>
+                        <input type="email" class="form-control" name="aemail" id="aemail" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="afechanacimiento">Fecha Nacimiento</label>
+                        <input type="date" class="form-control" name="afechanacimiento" id="afechanacimiento" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Fecha Registro</label>
+                        <input type="text" class="form-control" name="afecharegistro" id="afecharegistro" value=""/>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-primary submitBtn">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>
+ 
       <?php
    /*   echo('<form role="form" id="form_actualizar" method="post">
       <table class="table">
