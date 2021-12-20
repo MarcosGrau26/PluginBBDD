@@ -145,6 +145,40 @@ function mfp_Add_My_Admin_Link()
         </tr>
       </table>
       </form>
+      <form role="form" id="form_actualizar" method="post">
+                <div class="form-group">
+                        <label for="aid">ID</label>
+                        <input type="text" class="form-control" name="aid" id="aid" value="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Nombre</label>
+                        <input type="text" class="form-control" name="anombre" id="anombre" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Apellido</label>
+                        <input type="text" class="form-control" name="aapellido" id="aapellido" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="adni">DNI</label>
+                        <input type="text" class="form-control" name="adni" id="adni" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="atln">Telefono</label>
+                        <input type="number" class="form-control" name="atln" id="atln" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="aemail">Email</label>
+                        <input type="email" class="form-control" name="aemail" id="aemail" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="afechanacimiento">Fecha Nacimiento</label>
+                        <input type="date" class="form-control" name="afechanacimiento" id="afechanacimiento" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Fecha Registro</label>
+                        <input type="text" class="form-control" name="afecharegistro" id="afecharegistro" value=""/>
+                    </div>
+                </form>
       <?php
       echo('<form role="form" id="form_actualizar" method="post">
       <table class="table">
@@ -160,6 +194,14 @@ function mfp_Add_My_Admin_Link()
           <th></th>
         </tr>');
       foreach ($items as $item) {
+        $datos=$item['id_cliente']."||".
+                            $item['nombre']."||".
+                            $item['apellido']."||".
+                            $item['dni']."||".
+                            $item['tlf']."||".
+                            $item['email']."||".
+                            $item['fechanacimiento']."||".
+                            $item['fecharegistro'];
         echo ('<tr>
           <td>'.$item['id_cliente'].'</td>
           <td>'.$item['nombre'].'</td>
@@ -169,7 +211,7 @@ function mfp_Add_My_Admin_Link()
           <td>'.$item['email'].'</td>
           <td>'.$item['fechanacimiento'].'</td>
           <td>'.$item['fecharegistro'].'</td>
-          <td><button type="submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn">Editar</button></td>
+          <td><button name="btn_actualizar" id="btn_actualizar" class="btn btn-warning submitBtn" onclick="LlenarDatos('echo $datos')";>Editar</button></td>
           <td><a href="../wp-content/plugins/PluginBBDD/eliminar.php?id_cliente='.$item['id_cliente'].'">Borrar</a></td>');
       }
       echo('</table></form>');
