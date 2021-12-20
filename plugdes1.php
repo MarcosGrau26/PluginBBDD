@@ -121,6 +121,31 @@ function mfp_Add_My_Admin_Link()
       // $items = $mydb->get_results("SELECT * FROM `Cliente`"); 
       $sql = "SELECT * FROM cliente";
       $items = mysqli_query($conn, $sql);
+      ?>
+      <h1>Añadir nueva fila</h1>
+      <form role="form" id="form_registrar" method="post">
+      <table class="table">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>DNI</th>
+          <th>TELEFONO</th>
+          <th>EMAIL</th>
+          <th>FECHA NACIMIENTO</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td><input type="text" name="nombre"></td>
+          <td><input type="text" name="apellido"></td>
+          <td><input type="text" name="dni"></td>
+          <td><input type="number" name="tlf"></td>
+          <td><input type="text" name="email"></td>
+          <td><input type="date" name="fechanacimiento"></td>
+          <td><button type="submit" name="btn_reguistrar" id="btn_registrar" class="btn btn-primary submitBtn">Registrar</button></td>
+        </tr>
+      </table>
+      </form>
+      <?php
       echo('<form role="form" id="form_actualizar" method="post">
       <table class="table">
         <tr>
@@ -149,29 +174,6 @@ function mfp_Add_My_Admin_Link()
       }
       echo('</table></form>');
       ?>
-      <h1>Añadir nueva fila</h1>
-      <form role="form" id="form_registrar" method="post">
-      <table class="table">
-        <tr>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>DNI</th>
-          <th>TELEFONO</th>
-          <th>EMAIL</th>
-          <th>FECHA NACIMIENTO</th>
-          <th></th>
-        </tr>
-        <tr>
-          <td><input type="text" name="nombre"></td>
-          <td><input type="text" name="apellido"></td>
-          <td><input type="text" name="dni"></td>
-          <td><input type="number" name="tlf"></td>
-          <td><input type="text" name="email"></td>
-          <td><input type="date" name="fechanacimiento"></td>
-          <td><button type="submit" name="btn_reguistrar" id="btn_registrar" class="btn btn-primary submitBtn">Registrar</button></td>
-        </tr>
-      </table>
-      </form>
       <script type="text/javascript">
 	  $(document).ready(function(){
 		  $("#btn_registrar").on('click', function(e){
