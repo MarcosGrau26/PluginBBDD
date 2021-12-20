@@ -47,7 +47,7 @@ location.reload(true);
       url:'../wp-content/plugins/Plugin_basededatos/includes/actualizar.php',
       data:datos,
      success: function (e) {
-        alert("Actualizado");
+       // alert("Actualizado");
         location.reload(true);
       }
       
